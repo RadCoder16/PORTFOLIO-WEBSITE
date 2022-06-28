@@ -1,0 +1,202 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 1.5;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-rows: min-content 1fr;
+
+    overflow-x: hidden;
+}
+
+.home{
+    background-image: url('../Images/mohammad-rahmani-jTTDXiNveOs-unsplash.jpg');
+}
+
+.container{
+    font-family: sans-serif;
+}
+
+img,
+picture{
+    max-width: 100%;
+    display: block;
+}
+
+
+.flex{
+    display: inline;
+    gap: var(--gap, 2rem);
+}
+
+.logo{
+    margin: 2rem;
+}
+
+.logo span{
+    font-family: sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.logo i{
+    font-size: 3.5rem;
+    background-image: url('../Images/-355684327.jpg');
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+.primary-header{
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-nav-toggle{
+    display: none;
+}
+
+.primary-navigation{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    background: hsl(0 0% 0% / 0.5);
+}
+
+.contact_link{
+    color: #fff;
+    font-size: 1rem;
+    background-color: lightblue;
+    text-align: center;
+}
+
+.contact_link:hover{
+    background-color: antiquewhite;
+}
+
+@supports(backdrop-filter: blur(1rem)){
+    .primary-navigation{
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);
+    }
+}
+
+.primary-navigation a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.primary-navigation a:hover{
+    color: navajowhite;
+    transition: transform 350ms ease-in-out;
+}
+
+
+.primary-navigation a > [aria-hidden="true"]{
+    font-weight: 700;
+    margin-inline-end: 0.75em;
+}
+
+
+@media (min-width: 200px){
+    .primary-navigation{
+        --gap: rem;
+
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+}
+
+
+.about{
+    color: white;
+    margin: 100px;
+    scroll-padding: 500px;
+}
+
+.about p{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.primary-navigation[data-visible="true"]{
+    transform: translateX(0%);
+}
+
+.mobile-nav-toggle{
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    background-color: transparent;
+    background: url('../Images/menu.png');
+    background-repeat: no-repeat;
+    width: 2rem;
+    border: 0;
+    aspect-ratio: 1 / 2;
+    top: 2rem;
+    right: 2rem;
+}
+
+@media (max-width: 600px){
+    .about{
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+.my-profile{
+    background-image: url('../Images/jefferson-santos-9SoCnyQmkzI-unsplash.jpg');
+}
+
+.mobile-nav-toggle[aria-expanded="true"]{
+    background-image: url('../Images/close.png');
+    background-repeat: no-repeat;
+    z-index: 9999;
+}
+
+@media (min-width: 55em) and (max-width: 35em){
+    .primary-navigation a > span[aria-hidden]{
+        display: none;
+    }
+}
+
+@media (min-width: 55em) {
+    .primary-navigation{
+        --gap: clamp(1.5rem, 5vw, 3rem)
+        padding-block: 2rem;
+        padding-inline: clamp(3rem, 5vw, 10rem);
+    }
+}
+
+.appreciation p{
+    font-size: 1.3rem;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+
+}
+
+.appreciation h1{
+    font-size: 1.3rem;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+
+.transparent_bg{
+    background: rgba(0,0,0,0.5)
+}
+
